@@ -8,7 +8,7 @@ const mineflayer = require('mineflayer');
 function createBot() {
     const bot = mineflayer.createBot({
         host: 'Idontkow.aternos.me', // 1. CAMBIA ESTO por la IP de tu servidor
-        port: 33753,
+        port: 25565,
         username: 'Bot',          // El nombre que tendrá tu bot
         version: '1.21.1'                      // 2. CAMBIA ESTO por tu versión si es otra
     });
