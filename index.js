@@ -7,14 +7,14 @@ const mineflayer = require('mineflayer');
 
 function createBot() {
     const bot = mineflayer.createBot({
-        host: 'zebrafish.aternos.host', // 1. CAMBIA ESTO por la IP de tu servidor
+        host: 'zebrafish.aternos.host', 
         port: 33753,
-        username: 'Bot',          // El nombre que tendrá tu bot
-        version: '1.21.1'                      // 2. CAMBIA ESTO por tu versión si es otra
+        username: 'BotGuardian',          
+        version: '1.21.1'                      
     });
 
     bot.on('spawn', () => {
-        console.log(`[BOT] Conectado exitosamente.`);
+        console.log('[BOT] Conectado exitosamente.');
         setInterval(() => {
             bot.setControlState('jump', true);
             setTimeout(() => bot.setControlState('jump', false), 500);
@@ -22,7 +22,7 @@ function createBot() {
     });
 
     bot.on('kick', (reason) => {
-        console.log(`[BOT] Expulsado por: ${reason}. Reconectando...`);
+        console.log('[BOT] Expulsado por: ' + reason + '. Reconectando...');
         setTimeout(createBot, 15000);
     });
 
